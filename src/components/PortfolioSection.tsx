@@ -38,9 +38,15 @@ const PortfolioSection = () => {
           <h2 className="heading-lg mt-3 mb-4">
             Our Recent <span className="text-gradient">Work</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
             Explore some of our successful projects that have transformed businesses.
           </p>
+          <a
+            href="/store"
+            className="inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all duration-300"
+          >
+            View All Projects <ExternalLink className="w-4 h-4" />
+          </a>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
