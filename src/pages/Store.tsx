@@ -1,85 +1,167 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ExternalLink, MessageCircle, ArrowLeft, Search, Filter } from "lucide-react";
+import { ExternalLink, MessageCircle, Home, Search, Filter, Phone, Facebook } from "lucide-react";
 import ziptocodelogo from "@/assets/ziptocode-logo.png";
 
 const products = [
   {
-    id: 1,
-    title: "E-Commerce Platform",
-    category: "Web Application",
-    description: "Full-featured online store with payment integration, inventory management, and admin dashboard.",
-    tags: ["React", "Firebase", "Stripe"],
-    price: "Contact for Price",
-    features: ["Admin Dashboard", "Payment Integration", "Inventory Management", "Order Tracking"],
-  },
-  {
-    id: 2,
-    title: "School Management System",
-    category: "Educational",
-    description: "Complete solution for student enrollment, attendance, grade management, and parent portal.",
-    tags: ["TypeScript", "Node.js", "MongoDB"],
-    price: "Contact for Price",
-    features: ["Student Portal", "Parent Access", "Grade Management", "Attendance Tracking"],
-  },
-  {
-    id: 3,
-    title: "Healthcare Portal",
-    category: "Healthcare",
-    description: "Patient appointment booking, medical records management, and doctor scheduling system.",
-    tags: ["React", "PostgreSQL", "AWS"],
-    price: "Contact for Price",
-    features: ["Appointment Booking", "Medical Records", "Doctor Dashboard", "Patient Portal"],
-  },
-  {
-    id: 4,
-    title: "Business Automation Suite",
-    category: "Automation",
-    description: "Workflow automation for inventory, order processing, and business analytics.",
-    tags: ["Python", "APIs", "Zapier"],
-    price: "Contact for Price",
-    features: ["Workflow Automation", "Analytics Dashboard", "API Integration", "Custom Reports"],
-  },
-  {
-    id: 5,
-    title: "Restaurant Management",
-    category: "Business",
-    description: "Complete restaurant solution with online ordering, table booking, and kitchen management.",
-    tags: ["React", "Firebase", "Node.js"],
-    price: "Contact for Price",
-    features: ["Online Ordering", "Table Reservation", "Kitchen Display", "POS Integration"],
-  },
-  {
-    id: 6,
-    title: "Real Estate Platform",
-    category: "Web Application",
-    description: "Property listing, virtual tours, agent management, and lead tracking system.",
-    tags: ["Next.js", "Supabase", "Maps API"],
-    price: "Contact for Price",
-    features: ["Property Listings", "Virtual Tours", "Agent Portal", "Lead Management"],
-  },
-  {
-    id: 7,
-    title: "Portfolio Website Template",
+    id: "portfolio",
+    title: "Personal Portfolio",
     category: "Website",
-    description: "Modern, responsive portfolio template for professionals and creatives.",
-    tags: ["React", "Tailwind", "Framer Motion"],
+    description: "My personal portfolio website showcasing skills, projects and experience as a web developer. Responsive website with modern design principles.",
+    tags: ["HTML", "CSS", "JavaScript"],
     price: "Contact for Price",
-    features: ["Responsive Design", "Dark/Light Mode", "Contact Form", "SEO Optimized"],
+    features: ["Responsive Design", "Modern UI", "Project Showcase", "Contact Form"],
+    demoUrl: "https://ridoan-zisan.netlify.app",
+    imageUrl: "https://github.com/RidoanDev.png",
   },
   {
-    id: 8,
-    title: "Gym Management System",
-    category: "Business",
-    description: "Member management, class scheduling, and payment tracking for fitness centers.",
-    tags: ["React", "Node.js", "MongoDB"],
+    id: "dhunathub",
+    title: "DhunatHub - Local Help Directory",
+    category: "Web Application",
+    description: "A comprehensive local help directory connecting people with local services and resources. Features user reviews, service categories, and intuitive interface.",
+    tags: ["React", "Firebase", "Maps"],
     price: "Contact for Price",
-    features: ["Member Portal", "Class Scheduling", "Payment Tracking", "Trainer Dashboard"],
+    features: ["Service Directory", "User Reviews", "Category Filter", "Search Function"],
+    demoUrl: "https://dhunat.netlify.app",
+    imageUrl: "https://i.postimg.cc/KvXCcTcg/dhunathub.png",
+  },
+  {
+    id: "zupramart",
+    title: "ZupraMart - E-commerce Platform",
+    category: "E-commerce",
+    description: "Complete e-commerce platform with product listings, shopping cart, and secure checkout. Features user authentication and order management.",
+    tags: ["React", "Node.js", "Payment"],
+    price: "Contact for Price",
+    features: ["Shopping Cart", "User Auth", "Product Catalog", "Order Tracking"],
+    demoUrl: "https://zupramart.netlify.app",
+    imageUrl: "https://zupramart.netlify.app/ZupraMart.jpg",
+  },
+  {
+    id: "bobdo",
+    title: "BOBDO - Blood Donation Organization",
+    category: "Healthcare",
+    description: "Blood donation platform connecting donors with recipients. Reduced response time by 40% and served 68,000+ community members.",
+    tags: ["React", "Firebase", "Real-time"],
+    price: "Contact for Price",
+    features: ["Donor Registry", "Blood Request", "Real-time Match", "SMS Alerts"],
+    demoUrl: "https://bobdo.vercel.app",
+    imageUrl: "https://i.postimg.cc/FH2r1Q8D/bobdo-removebg-preview.png",
+  },
+  {
+    id: "zpad",
+    title: "Zpad - Note Taking Application",
+    category: "Productivity",
+    description: "Feature-rich note-taking application with markdown support and organizational tools. Categories, tags, search, and cloud sync.",
+    tags: ["React", "Markdown", "Cloud"],
+    price: "Contact for Price",
+    features: ["Markdown Support", "Categories", "Search", "Cloud Sync"],
+    demoUrl: "https://zpad.netlify.app",
+    imageUrl: "https://i.postimg.cc/vBkkVgWk/zpad.png",
+  },
+  {
+    id: "youthhope",
+    title: "YouthHopeBD - Youth Organization",
+    category: "Organization",
+    description: "Youth organization platform for community development. Event management, volunteer opportunities, and educational resources.",
+    tags: ["React", "Firebase", "Events"],
+    price: "Contact for Price",
+    features: ["Event Management", "Volunteer Portal", "Resources", "Community Hub"],
+    demoUrl: "https://youthhope-bd.netlify.app",
+    imageUrl: "https://i.postimg.cc/rskLpzPD/IMG-20250916-021919.jpg",
+  },
+  {
+    id: "uniconverter",
+    title: "UniConverter - Universal Converter",
+    category: "Utility",
+    description: "Universal converter supporting multiple measurement types. Length, weight, temperature, currency conversions with intuitive interface.",
+    tags: ["JavaScript", "Math", "API"],
+    price: "Contact for Price",
+    features: ["Unit Conversion", "Currency", "Temperature", "Quick Results"],
+    demoUrl: "https://uniconverter.netlify.app",
+    imageUrl: "https://i.postimg.cc/qqKYXJwR/uniconverter.png",
+  },
+  {
+    id: "hscian",
+    title: "HSCian - E-learning Platform",
+    category: "Educational",
+    description: "E-learning platform for HSC students with study materials, chapter-wise guides, and built-in HTML & C compilers. Completely non-profit.",
+    tags: ["React", "Education", "Compiler"],
+    price: "Contact for Price",
+    features: ["Study Materials", "Code Compiler", "Study Tips", "Free Access"],
+    demoUrl: "https://hscian.netlify.app",
+    imageUrl: "https://i.postimg.cc/KjfkwDnN/HSCian-20250922-011814-0000.png",
+  },
+  {
+    id: "sound-memory-game",
+    title: "Sound Memory Game",
+    category: "Game",
+    description: "Interactive sound memory game challenging players to match pairs of sounds. Multiple themes, score tracking, and timer.",
+    tags: ["JavaScript", "Audio", "Game"],
+    price: "Contact for Price",
+    features: ["Sound Matching", "Score Tracking", "Multiple Levels", "Timer"],
+    demoUrl: "https://mindgame-i.netlify.app",
+    imageUrl: "https://i.postimg.cc/qvxP57T6/memorygame.png",
+  },
+  {
+    id: "snake-game",
+    title: "Snake Game",
+    category: "Game",
+    description: "Classic snake game with modern features. Score tracking, increasing difficulty, and responsive controls for all devices.",
+    tags: ["JavaScript", "Canvas", "Game"],
+    price: "Contact for Price",
+    features: ["Classic Gameplay", "Score Board", "Responsive", "Difficulty Levels"],
+    demoUrl: "https://snake-i.netlify.app/",
+    imageUrl: "https://i.postimg.cc/Jhh2YcxS/snakegame.png",
+  },
+  {
+    id: "thetacode",
+    title: "ThetaCode - Programming Platform",
+    category: "Educational",
+    description: "Programming platform for developers to learn and practice. Coding challenges, tutorials, and built-in code editor.",
+    tags: ["React", "Monaco", "Code"],
+    price: "Contact for Price",
+    features: ["Code Editor", "Challenges", "Tutorials", "Multi-language"],
+    demoUrl: "https://thetacode.netlify.app/",
+    imageUrl: "https://i.postimg.cc/kMRkdsCm/thetacode.png",
+  },
+  {
+    id: "tiktaktoe",
+    title: "TikTakToe - Classic Game",
+    category: "Game",
+    description: "Digital Tic-Tac-Toe with enhanced features. Play against computer or friend with multiple difficulty levels.",
+    tags: ["JavaScript", "AI", "Game"],
+    price: "Contact for Price",
+    features: ["Single Player", "Multiplayer", "AI Opponent", "Score History"],
+    demoUrl: "https://xox-i.netlify.app/",
+    imageUrl: "https://i.postimg.cc/g2m58PZz/tiktaktoe.png",
+  },
+  {
+    id: "toolhub",
+    title: "ToolHub - Developer Utilities",
+    category: "Utility",
+    description: "Collection of essential developer tools. Code formatters, validators, converters, and helpful utilities in one platform.",
+    tags: ["JavaScript", "Tools", "Utility"],
+    price: "Contact for Price",
+    features: ["Code Formatter", "Validators", "Converters", "Quick Access"],
+    demoUrl: "https://toolhub-i.netlify.app/",
+    imageUrl: "https://i.postimg.cc/vZyRhVpd/toolhub.png",
+  },
+  {
+    id: "typing-test",
+    title: "Typing Test - Speed Assessment",
+    category: "Utility",
+    description: "Typing test application measuring speed and accuracy. Various text samples, progress tracking, and detailed statistics.",
+    tags: ["JavaScript", "Analytics", "Test"],
+    price: "Contact for Price",
+    features: ["WPM Tracking", "Accuracy Stats", "Progress History", "Multiple Texts"],
+    demoUrl: "https://typing-i.netlify.app/",
+    imageUrl: "https://i.postimg.cc/fRCPvgcx/typingtest.png",
   },
 ];
 
-const categories = ["All", "Web Application", "Educational", "Healthcare", "Automation", "Business", "Website"];
+const categories = ["All", "Website", "Web Application", "E-commerce", "Educational", "Healthcare", "Productivity", "Organization", "Utility", "Game"];
 
 const Store = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -92,9 +174,17 @@ const Store = () => {
     return matchesCategory && matchesSearch;
   });
 
-  const handleContact = (productTitle: string) => {
+  const handleWhatsAppContact = (productTitle: string) => {
     const message = `Hi! I'm interested in purchasing "${productTitle}" from ZiptoCode Store. Please provide more details.`;
     window.open(`https://wa.me/8801712525910?text=${encodeURIComponent(message)}`, "_blank");
+  };
+
+  const handleFacebookMessage = (productTitle: string) => {
+    window.open("https://m.me/ziptocode", "_blank");
+  };
+
+  const handleCall = () => {
+    window.location.href = "tel:+8809638845910";
   };
 
   return (
@@ -115,8 +205,8 @@ const Store = () => {
               to="/"
               className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors duration-300"
             >
-              <ArrowLeft className="w-4 h-4" />
-              Back to Home
+              <Home className="w-4 h-4" />
+              <span className="hidden sm:inline">Back to Home</span>
             </Link>
           </nav>
         </div>
@@ -147,7 +237,7 @@ const Store = () => {
             className="text-muted-foreground max-w-2xl mx-auto mb-8"
           >
             Browse our collection of professionally built websites, web apps, and projects. 
-            Contact us to purchase and customize any solution for your business.
+            Try the live demo and contact us to purchase.
           </motion.p>
 
           {/* Search */}
@@ -205,12 +295,21 @@ const Store = () => {
                   key={product.id}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ delay: index * 0.05 }}
                   className="group glass-card overflow-hidden hover:border-primary/50 transition-all duration-300"
                 >
-                  {/* Product Image Placeholder */}
+                  {/* Product Image */}
                   <div className="h-40 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center relative overflow-hidden">
-                    <span className="text-5xl text-primary/30 font-bold">
+                    <img 
+                      src={product.imageUrl} 
+                      alt={product.title}
+                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                      }}
+                    />
+                    <span className="hidden text-5xl text-primary/30 font-bold absolute">
                       {product.title.charAt(0)}
                     </span>
                     <div className="absolute top-3 right-3">
@@ -252,16 +351,45 @@ const Store = () => {
                       ))}
                     </div>
 
-                    {/* Price & Action */}
-                    <div className="flex items-center justify-between pt-4 border-t border-border/50">
-                      <span className="text-sm font-medium text-primary">{product.price}</span>
-                      <button
-                        onClick={() => handleContact(product.title)}
-                        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors duration-300"
-                      >
-                        <MessageCircle className="w-4 h-4" />
-                        Contact
-                      </button>
+                    {/* Live Demo Button */}
+                    <a
+                      href={product.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-lg bg-secondary text-secondary-foreground text-sm font-medium hover:bg-secondary/80 transition-colors duration-300 mb-3"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      Live Demo
+                    </a>
+
+                    {/* Price & Actions */}
+                    <div className="flex flex-col gap-2 pt-4 border-t border-border/50">
+                      <span className="text-sm font-medium text-primary text-center">{product.price}</span>
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() => handleWhatsAppContact(product.title)}
+                          className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-primary text-primary-foreground text-xs font-medium hover:bg-primary/90 transition-colors duration-300"
+                          title="WhatsApp"
+                        >
+                          <MessageCircle className="w-3.5 h-3.5" />
+                          WhatsApp
+                        </button>
+                        <button
+                          onClick={() => handleFacebookMessage(product.title)}
+                          className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-[#1877F2] text-white text-xs font-medium hover:bg-[#1877F2]/90 transition-colors duration-300"
+                          title="Facebook"
+                        >
+                          <Facebook className="w-3.5 h-3.5" />
+                          Message
+                        </button>
+                        <button
+                          onClick={handleCall}
+                          className="flex items-center justify-center px-3 py-2 rounded-lg bg-green-600 text-white text-xs font-medium hover:bg-green-600/90 transition-colors duration-300"
+                          title="Call"
+                        >
+                          <Phone className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -291,9 +419,19 @@ const Store = () => {
               Chat on WhatsApp
             </a>
             <a
+              href="https://m.me/ziptocode"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline flex items-center justify-center gap-2"
+            >
+              <Facebook className="w-5 h-5" />
+              Message on Facebook
+            </a>
+            <a
               href="tel:+8809638845910"
               className="btn-outline flex items-center justify-center gap-2"
             >
+              <Phone className="w-5 h-5" />
               Call: +880 9638-845910
             </a>
           </div>
@@ -304,7 +442,7 @@ const Store = () => {
       <footer className="py-8 border-t border-border/50">
         <div className="container-max px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-muted-foreground text-sm">
-            © 2024 ZiptoCode Tech Solution. All rights reserved.
+            © {new Date().getFullYear()} ZiptoCode Tech Solution. All rights reserved.
           </p>
         </div>
       </footer>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingCart } from "lucide-react";
 import { motion } from "framer-motion";
 import ziptocodelogo from '@/assets/ziptocode-logo.png';
 
@@ -68,8 +68,9 @@ const Header = () => {
             transition={{ duration: 0.3, delay: 0.6 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="hidden lg:block btn-primary text-sm"
+            className="hidden lg:flex items-center gap-2 btn-primary text-sm"
           >
+            <ShoppingCart size={16} />
             ZiptoCode Store
           </motion.a>
 
@@ -99,8 +100,9 @@ const Header = () => {
               <a
                 href="/store"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="btn-primary text-center mt-4 text-sm"
+                className="btn-primary flex items-center justify-center gap-2 mt-4 text-sm"
               >
+                <ShoppingCart size={16} />
                 ZiptoCode Store
               </a>
             </div>
