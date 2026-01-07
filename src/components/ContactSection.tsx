@@ -107,7 +107,7 @@ const ContactSection = () => {
               </a>
 
               <a
-                href="tel:+8801712525910"
+                href="tel:+8809638845910"
                 className="flex items-center gap-4 p-4 glass-card hover:border-primary/50 transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -115,7 +115,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Phone</p>
-                  <p className="font-medium text-foreground">+880 1712525910</p>
+                  <p className="font-medium text-foreground">+880 9638-845910</p>
                 </div>
               </a>
 
@@ -132,7 +132,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">WhatsApp</p>
-                  <p className="font-medium text-foreground">Chat with us</p>
+                  <p className="font-medium text-foreground">+880 1712-525910</p>
                 </div>
               </a>
             </div>

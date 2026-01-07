@@ -62,7 +62,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <motion.a
-            href="#contact"
+            href="/store"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3, delay: 0.6 }}
@@ -70,7 +70,7 @@ const Header = () => {
             whileTap={{ scale: 0.95 }}
             className="hidden lg:block btn-primary text-sm"
           >
-            Get a Consultation
+            ZiptoCode Store
           </motion.a>
 
           {/* Mobile Menu Button */}
@@ -97,11 +97,11 @@ const Header = () => {
                 </a>
               ))}
               <a
-                href="#contact"
+                href="/store"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="btn-primary text-center mt-4 text-sm"
               >
-                Get a Consultation
+                ZiptoCode Store
               </a>
             </div>
           </div>
