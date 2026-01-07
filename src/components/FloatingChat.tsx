@@ -113,12 +113,13 @@ We use modern technologies like HTML5, CSS3, JavaScript, TypeScript, and Firebas
       return `You can reach ZiptoCode Tech Solution through:
 
 Email: ziptocode.bd@gmail.com
-Phone: +880 1712525910
+Phone: +880 9638-845910
+WhatsApp: +880 1712-525910
 Facebook: facebook.com/ziptocode
 
 CEO Direct Contact:
 Email: ridoan.zisan@gmail.com
-Phone: +880 1712525910
+Phone: +880 1712-525910
 
 Feel free to contact us for any inquiries or to start your project!`;
     }
